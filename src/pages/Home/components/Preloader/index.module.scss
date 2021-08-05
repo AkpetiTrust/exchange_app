@@ -1,0 +1,96 @@
+.preloader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  color: #fff;
+  top: 0;
+  left: 0;
+  transform-origin: top;
+  animation: disappear 0.8s 2.5s forwards, reduce 0.1s 3.3s forwards;
+  z-index: 3;
+
+  .slider {
+    width: 100%;
+    height: 100vh;
+    background-color: #0a0909;
+
+    p {
+      font-weight: 800;
+      font-size: 1.7em;
+      position: relative;
+      padding: 5px 50px;
+      width: 250px;
+      text-align: center;
+
+      span {
+        opacity: 0;
+        animation: fadeIn 0.8s 1.3s forwards;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+      }
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%) scale(0);
+        animation: scaleTopIn 0.2s 0.4s forwards, slideUp 0.5s 0.8s forwards;
+      }
+
+      &::after {
+        bottom: 50%;
+        transform: translateY(50%) scale(0);
+        animation: scaleBottomIn 0.2s 0.4s forwards,
+          slideDown 0.5s 0.8s forwards;
+      }
+    }
+  }
+}
+
+@keyframes slideUp {
+  to {
+    top: 0;
+  }
+}
+
+@keyframes slideDown {
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes scaleTopIn {
+  to {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+@keyframes scaleBottomIn {
+  to {
+    transform: translateY(50%) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes reduce {
+  to {
+    transform: scaleY(0);
+  }
+}
