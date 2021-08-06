@@ -31,6 +31,33 @@ body {
           align-items: center;
 }
 
+.shapes div {
+  position: fixed;
+  z-index: -1;
+}
+
+.shapes .triangle {
+  width: 0;
+  height: 0;
+  top: -80px;
+  left: 50px;
+  border: 100px solid transparent;
+  border-bottom-color: #6d4be757;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.shapes .sphere {
+  width: 150px;
+  height: 150px;
+  right: -50px;
+  top: -50px;
+  border-radius: 50%;
+  background: radial-gradient(81.96% 81.96% at 74.9% 18.04%, #d5dedc 0%, #00a17d 100%);
+  -webkit-transform: rotate(-108.53deg);
+          transform: rotate(-108.53deg);
+}
+
 .home {
   padding: 20px;
 }
@@ -147,31 +174,52 @@ body {
   width: 300px;
 }
 
-.home .home-main .shapes div {
+.calculator-main {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.calculator-main .arrow {
+  all: unset;
+  cursor: pointer;
   position: fixed;
-  z-index: -1;
+  top: 20px;
+  left: 20px;
 }
 
-.home .home-main .shapes .triangle {
-  width: 0;
-  height: 0;
-  top: -80px;
-  left: 50px;
-  border: 100px solid transparent;
-  border-bottom-color: #6d4be757;
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
+.calculator-main .inner {
+  padding: 50px;
 }
 
-.home .home-main .shapes .sphere {
-  width: 150px;
-  height: 150px;
-  right: -50px;
-  top: -50px;
-  border-radius: 50%;
-  background: radial-gradient(81.96% 81.96% at 74.9% 18.04%, #d5dedc 0%, #00a17d 100%);
-  -webkit-transform: rotate(-108.53deg);
-          transform: rotate(-108.53deg);
+.calculator-main .inner .input-area .list-input {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  outline: none;
+  padding: 5px 0;
+  padding-left: 5px;
+  font-weight: 800;
+  border-radius: 10px;
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+.calculator-main .inner .input-area .number-input {
+  all: unset;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.calculator-main .inner .input-area input[disabled] {
+  opacity: 0.5;
+}
+
+.calculator-main .inner .middle {
+  margin: 50px 0;
+}
+
+.calculator-main .inner .talk {
+  font-weight: 800;
+  font-size: 1.2em;
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 760px) {

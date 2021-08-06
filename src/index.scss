@@ -25,6 +25,37 @@ body {
   align-items: center;
 }
 
+.shapes {
+  div {
+    position: fixed;
+    z-index: -1;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    top: -80px;
+    left: 50px;
+    border: 100px solid transparent;
+    border-bottom-color: #6d4be757;
+    transform: rotate(30deg);
+  }
+
+  .sphere {
+    width: 150px;
+    height: 150px;
+    right: -50px;
+    top: -50px;
+    border-radius: 50%;
+    background: radial-gradient(
+      81.96% 81.96% at 74.9% 18.04%,
+      #d5dedc 0%,
+      #00a17d 100%
+    );
+    transform: rotate(-108.53deg);
+  }
+}
+
 .home {
   padding: 20px;
   .home-main {
@@ -134,36 +165,54 @@ body {
         width: 300px;
       }
     }
+  }
+}
 
-    .shapes {
-      div {
-        position: fixed;
-        z-index: -1;
+.calculator-main {
+  height: 100vh;
+  overflow: hidden;
+  .arrow {
+    all: unset;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+
+  .inner {
+    padding: 50px;
+
+    .input-area {
+      .list-input {
+        border: 1px solid rgba($color: #000000, $alpha: 0.4);
+        outline: none;
+        padding: 5px 0;
+        padding-left: 5px;
+        font-weight: 800;
+        border-radius: 10px;
+        width: 130px;
+        margin-bottom: 15px;
       }
 
-      .triangle {
-        width: 0;
-        height: 0;
-        top: -80px;
-        left: 50px;
-        border: 100px solid transparent;
-        border-bottom-color: #6d4be757;
-        transform: rotate(30deg);
+      .number-input {
+        all: unset;
+        width: 100%;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.4);
       }
 
-      .sphere {
-        width: 150px;
-        height: 150px;
-        right: -50px;
-        top: -50px;
-        border-radius: 50%;
-        background: radial-gradient(
-          81.96% 81.96% at 74.9% 18.04%,
-          #d5dedc 0%,
-          #00a17d 100%
-        );
-        transform: rotate(-108.53deg);
+      input[disabled] {
+        opacity: 0.5;
       }
+    }
+
+    .middle {
+      margin: 50px 0;
+    }
+
+    .talk {
+      font-weight: 800;
+      font-size: 1.2em;
+      margin-top: 30px;
     }
   }
 }
