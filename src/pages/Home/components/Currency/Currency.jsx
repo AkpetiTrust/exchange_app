@@ -19,7 +19,7 @@ const Currency = ({ targetCurrency, activeCurrency, map }) => {
     });
 
     fetch(
-      `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${activeCurrency}&tsyms=USD,EUR,NGN`
+      `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${activeCurrency}&tsyms=USD,EUR,NGN&api_key=5d430aae2f069034b3334addf3f224145c187aa3644c07303886f09fe1e3f19a`
     )
       .then((res) => res.json())
       .then((data) => {

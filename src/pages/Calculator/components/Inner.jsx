@@ -13,7 +13,7 @@ const Inner = () => {
 
   const convert = (fromCurrency, toCurrency, fromValue) => {
     fetch(
-      `https://min-api.cryptocompare.com/data/pricemulti?fsyms=${fromCurrency}&tsyms=${toCurrency}`
+      `https://min-api.cryptocompare.com/data/pricemulti?fsyms=${fromCurrency}&tsyms=${toCurrency}&api_key=5d430aae2f069034b3334addf3f224145c187aa3644c07303886f09fe1e3f19a`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -25,7 +25,9 @@ const Inner = () => {
   };
 
   useEffect(() => {
-    fetch("https://min-api.cryptocompare.com/data/all/coinlist?summary=true")
+    fetch(
+      "https://min-api.cryptocompare.com/data/all/coinlist?summary=true&api_key=5d430aae2f069034b3334addf3f224145c187aa3644c07303886f09fe1e3f19a"
+    )
       .then((res) => res.json())
       .then((data) => {
         let mapArray = [];
